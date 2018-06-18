@@ -6,6 +6,7 @@ var morgan = require('morgan')
 
 app.use(cors())
 app.use(bodyParser.json())
+app.use(express.static('build'))
 
 morgan.token('reqcontent', function getContent (req) {
   if (!req.body) {
@@ -50,10 +51,6 @@ var persons = [
   }
 ]
 
-
-app.get('/', (req, res) => {
-  res.send('<h1>Hello World!</h1>')
-})
 
 app.get('/api/persons', (req, res) => {
   res.json(persons)
