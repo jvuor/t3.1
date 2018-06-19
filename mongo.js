@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 
 const dburl = process.env.MONGOURL
-
 mongoose.connect(dburl)
 
 const personSchema = new mongoose.Schema({
